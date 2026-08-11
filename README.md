@@ -1,16 +1,50 @@
-# Introduction to Git
+# Stack Overflown - Dev-Themed Puzzle Game
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+這個 repository 是一個以開發者錯誤模式（error patterns）為主題的前端小遊戲，結合了落下方塊（Tetris 類型）的互動方式與錯誤圖樣識別機制。遊戲目標是透過操作落下的區塊，將目標錯誤模式拼出並清除，提升分數；若堆疊到頂端則遊戲結束。
 
-Hey unreal0518!
+## 專案功能
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+此 repo 提供一個簡單但完整的前端 Web 遊戲體驗，包含以下核心功能：
 
-Remember, it's self-paced so feel free to take a break! ☕️
+- 方塊下落與移動：使用方向鍵控制方塊左右移動、旋轉、軟落與硬落。
+- 目標錯誤模式：右側面板會隨機顯示一個 5 x 5 的錯誤模式，例如 Null Pointer、Memory Leak、Off By One、Race Condition 等。
+- 模式匹配判斷：當已落定區塊形成的畫面中，出現與目標圖樣一致的 5 x 5 區域時，會清除整塊畫面並加分。
+- 遊戲狀態顯示：包含分數、暫停狀態、遊戲結束畫面與重新開始流程。
+- 開發者主題視覺設計：使用 Bug、Function、String、Class、Variable、Keyword、Number 等顏色編碼，呈現程式語言開發場景風格。
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/unreal0518/skills-introduction-to-git/issues/1)
+## 專案結構
 
----
+- `src/index.html`：遊戲頁面主結構，包含 Canvas、分數面板與遊戲介面。
+- `src/index.js`：核心遊戲邏輯，包含落下、碰撞、旋轉、配對、得分、暫停與遊戲結束流程。
+- `src/patterns.js`：錯誤模式資料庫，定義可辨識的程式錯誤圖樣。
+- `src/style.css`：整體視覺樣式與版面設計。
+- `LICENSE`：專案授權資訊。
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+## 玩法說明
+
+1. 打開頁面後，系統會初始化遊戲板與目標錯誤圖樣。
+2. 方塊會持續落下，玩家可使用鍵盤操作：
+   - 左右方向鍵：左右移動
+   - 上方向鍵：旋轉
+   - 下方向鍵：軟落
+   - 空白鍵：硬落
+   - `P`：暫停/繼續
+3. 當板面中某個 5 x 5 範圍符合目前目標錯誤圖樣時，該區塊會被清除並獲得分數。
+4. 若新方塊無法在板面中生成，遊戲會進入結束狀態。
+
+## 執行方式
+
+由於本專案是純前端靜態網站，不需要安裝額外套件。
+
+可直接使用瀏覽器開啟以下檔案：
+
+```bash
+src/index.html
+```
+
+也可以透過本機 Web Server 啟動後，瀏覽對應頁面。
+
+## 開發目標
+
+這個 repo 的核心目標是透過可互動的視覺化方式，讓使用者在學習 Git 與錯誤排除概念時，將「辨識錯誤模式」與「程式開發流程」做連結。它適合作為前端入門與專案導覽的練習範例。
 
